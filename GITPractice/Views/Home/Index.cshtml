@@ -1,0 +1,52 @@
+﻿@model List<GITPractice.Models.User>
+
+<div class="container mt-5">
+
+    <!-- Card Form -->
+    <div class="card shadow-lg border-0 rounded-4 p-4">
+        <h3 class="mb-3 text-primary fw-bold">✨ Add New User</h3>
+
+        <form method="post" asp-action="Create">
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Name</label>
+                <input type="text" name="Name" class="form-control rounded-3 shadow-sm" placeholder="Enter name" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">City</label>
+                <input type="text" name="City" class="form-control rounded-3 shadow-sm" placeholder="Enter city" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100 rounded-3 fw-semibold">
+                Save User
+            </button>
+        </form>
+    </div>
+
+    <!-- Table -->
+    <div class="card shadow-lg border-0 rounded-4 mt-5 p-4">
+        <h3 class="mb-3 text-success fw-bold">📋 User List</h3>
+
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td class="fw-semibold">@user.Name</td>
+                        <td>@user.City</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
