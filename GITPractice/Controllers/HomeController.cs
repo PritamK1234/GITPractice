@@ -32,5 +32,10 @@ namespace GITPractice.Controllers
 
             return RedirectToAction("Index");
         }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
     }
 }
